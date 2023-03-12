@@ -241,3 +241,119 @@ public interface InterfaceExample {
 - we can use default access modifier but it is applicable to same package itself
 - we cannot use private or protected access modifier for interface
 ```
+### separate vowels and consonants using String filters
+```java
+package Logical;
+
+public class SeparateVowelsConsonants {
+    private static Long Vowels;
+    private static Long CONSONANTS;
+    private static int v=0;
+    private static int c=0;
+    public static void main(String[] args) throws IllegalAccessException {
+        String string= """
+                Helloo Whatsup Guys
+                """;
+        System.out.println("Original Value : "+string);
+
+        countOfVowelsAndConsonants(string);
+        countUsingString(string);
+        System.out.println("vowels from filter : "+Vowels);
+        System.out.println("consonants from filter : "+CONSONANTS);
+        System.out.println("vowels from charAt : "+v);
+        System.out.println("consonants from charAt : "+c);
+    }
+    // using filters
+    public static void countOfVowelsAndConsonants(String str) throws IllegalAccessException {
+        if (str== null){
+            throw new IllegalAccessException("string should not be null");
+        }
+     str=   str.replaceAll(" " ," ");
+         Vowels=   str.chars()
+                    .filter(ch-> 'a'==ch ||'e'==ch ||'i'==ch ||'o'==ch || 'u'==ch || 'A'==ch || 'E' == ch || 'I' == ch || 'O' == ch || 'U'==ch)
+                    .count();
+        CONSONANTS=  str.chars()
+                .filter(co-> (co >='a'&& co <='z')|| (co>='A' && co<='Z'))
+                .filter(co->('a'!=co && 'e'!=co && 'i'!=co && 'o'!=co && 'u'!=co) && ('A'!=co && 'E'!=co && 'I'!=co && 'O'!=co && 'U'!=co))
+                .count();
+    }
+    // using String.atChar()
+    public static void countUsingString(String str) throws IllegalAccessException {
+        if (str == null){
+            throw new IllegalAccessException("it should be null");
+        }
+      char chArray[]=  str.replaceAll(" "," ").toCharArray();
+        for (int i=0;i<chArray.length;i++){
+            char ch = chArray[i];
+            if ('a'==ch || 'e'==ch || 'i'==ch || 'o'==ch ||'u'==ch || 'A'==ch ||'E'==ch || 'I'==ch || 'O'== ch ||'U'==ch){
+                v++;
+            } else if ((ch>='a'&& ch<='z') || (ch>='A' && ch<='Z'))  {
+                c++;
+            }
+//            else {
+//                System.out.println("Nothing is there");
+//            }
+        }
+    }
+}
+```
+### sort employees according to their salary
+```java
+package Logical;
+
+import lombok.*;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class SortOfEmployees {
+    public static void main(String[] args) {
+    List<Employees> employeesList = new LinkedList<>();
+    employeesList.add(new Employees(1,"emp1","emp1@gmail.com",12000));
+    employeesList.add(new Employees(2,"emp2","emp2@gmail.com",10000));
+    employeesList.add(new Employees(3,"emp3","emp3@gmail.com",9000));
+
+//    List<Employees> emp=employeesList.stream()
+//                 .filter(c->c.getSalary()<13000)
+//            .sorted()
+//            .collect(Collectors.toList());
+//        System.out.println(emp);
+        Stream<Employees> stream=employeesList.stream();
+        stream.sorted((s1,s2)-> (int) (s1.getSalary() - s2.getSalary())).forEach(System.out::println);
+    }
+
+}
+@Setter
+@Getter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
+class Employees{
+    private int empId;
+    private String name;
+    private String email;
+    private  long salary;
+}
+```
+### count of letters or words using stream
+```java
+package Logical;
+
+import org.apache.el.stream.Stream;
+
+public class CountOfWordsOrLetters {
+    public static void main(String[] args){
+        String str= """
+                Your in String Bro
+                """;
+      Long s=  str.chars().count();
+        System.out.println(s);
+    }
+}
+```
+### fork in Git
+```md
+In git, fork is a copy of a repository that allow us to make changes without affecting the original repository, when you fork a repository you create a new copy of that repository under the own account and you make the changes to your copy of repository without affecting the original repository
+```
