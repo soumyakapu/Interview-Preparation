@@ -20,7 +20,9 @@ public class SortOfEmployees {
 //            .collect(Collectors.toList());
 //        System.out.println(emp);
         Stream<Employees> stream=employeesList.stream();
-        stream.sorted((s1,s2)-> (int) (s1.getSalary() - s2.getSalary())).forEach(System.out::println);
+        stream.sorted(
+               (s1,s2)->  (s1.getSalary() - s2.getSalary())
+        ).forEach(System.out::println);
     }
 
 }
@@ -33,5 +35,5 @@ class Employees{
     private int empId;
     private String name;
     private String email;
-    private  long salary;
+    private  int  salary;
 }

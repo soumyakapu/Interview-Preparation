@@ -241,7 +241,7 @@ public interface InterfaceExample {
 - we can use default access modifier but it is applicable to same package itself
 - we cannot use private or protected access modifier for interface
 ```
-### separate vowels and consonants using String filters
+### 136. separate vowels and consonants using String filters
 ```java
 package Logical;
 
@@ -297,7 +297,7 @@ public class SeparateVowelsConsonants {
     }
 }
 ```
-### sort employees according to their salary
+### 135. sort employees according to their salary
 ```java
 package Logical;
 
@@ -337,7 +337,7 @@ class Employees{
     private  long salary;
 }
 ```
-### count of letters or words using stream
+### 133. count of letters or words using stream
 ```java
 package Logical;
 
@@ -354,10 +354,10 @@ public class CountOfWordsOrLetters {
 }
 ```
 ### fork in Git
-```md
-In git, fork is a copy of a repository that allow us to make changes without affecting the original repository, when you fork a repository you create a new copy of that repository under the own account and you make the changes to your copy of repository without affecting the original repository
-```
-### Hashmap sort based on values using stream 
+
+- In git, fork is a copy of a repository that allow us to make changes without affecting the original repository, when you fork a repository you create a new copy of that repository under the own account and you make the changes to your copy of repository without affecting the original repository
+
+### 134. Hashmap sort based on values using stream 
 ```java
 package Logical;
 
@@ -382,3 +382,85 @@ public class HashMapUsingSort {
 }
 
 ```
+### 119. Java program to find Second Highest Element In an Array
+```java
+package Logical;
+import java.util.Arrays;
+
+public class FindSecondHighestElement {
+    public static void main(String[] args){
+    int[] numbers={9,23,54,67,1,3,2 ,98};
+    Arrays.sort(numbers);
+    int size=numbers.length;
+    int secondHighest=numbers[size - 2];
+        System.out.println("second Highest in the array : "+secondHighest);
+    int secondSmallest=numbers[1];
+        System.out.println("second smallest in the array : "+secondSmallest);
+    }
+}
+```
+### 120. Count strings whose length is greater than 3 in List using streams
+```md
+
+```
+###  @Builder
+```md
+- @Builder is a Lombok annotation .it will automatically generate the builder class for java class  that builder responsible for creating the setters and getters by default for non-static fields
+- note that if we want to modify the values we have to use explicitly getters and setters annotation
+  - @Builder will provide the all type of constructors called telescoping constructors
+    - @Builder will provide convenient for object creation
+    - it allow for the optional fields
+- no we dont have toString method in @Builder
+```
+```java
+package solutions;
+
+import lombok.*;
+
+public class CheckToString {
+    public static void main(String[] args) {
+    User user=User.builder().email("dbviuydg8").build();
+        System.out.println(user);
+    }
+}
+@Builder
+class User{
+    private String name;
+    private  String email;
+}
+```
+### 100. How annotation works in java
+```md
+- Annotation provide additional information about code ,it essentially  metadata that are added to classes,methods,fields it provide addtional information to the compiler or run time environment
+- We can also create customized annotation using @interface
+```
+```java
+package solutions;
+
+
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
+
+public class CustomizedAnnotaion {
+    @Hello
+    static void run(){
+        System.out.println("helooo");
+    }
+    public static void main(String[] args) {
+        run();
+    }
+}
+
+@Retention(RetentionPolicy.RUNTIME) // it specifys it should retained at runtime
+//@Target(ElementType.METHOD) // if we want to use only for methods we can use this
+ @interface Hello{
+
+}
+```
+### 101.Transaction rollback
+```md
+- Transaction rollback is the process of undoing the changes made by a transaction in DBMS .if transaction fails due to error or some other reasons  the DBMS discard the changes and it returns to its original state it can be done by manually by user or automatically trigged by the dbms whenever transaction fails due to deadlock or other some reasons.
+- Transaction rollback ensure the reliability and consistency of database 
+```
+
