@@ -463,4 +463,33 @@ public class CustomizedAnnotaion {
 - Transaction rollback is the process of undoing the changes made by a transaction in DBMS .if transaction fails due to error or some other reasons  the DBMS discard the changes and it returns to its original state it can be done by manually by user or automatically trigged by the dbms whenever transaction fails due to deadlock or other some reasons.
 - Transaction rollback ensure the reliability and consistency of database 
 ```
-
+### Spring Actuator
+```md
+- Spring Actuator is a powerful tool for monitoring  and managing the health of  springboot application
+- BY default it provide url some of them are /actuator/health ,/actuator/info,/actuator/loggers
+- we craete custom endpoints by @EndPoint by providing id has endpoint name
+  it should map to a method by using @ReadOperation annotation, it can also take Request params.
+  We can also change the default /actuator endpoint from the properties file by using management.endpoints.web.base-path="custom"
+```
+### Difference b/w Spring, String buffer ,StringBuilder
+## String
+- Storage : Strings stores in Heap area within the string constant pool
+-  Objects: Strings objects are immutable(i.e that are not changeable)
+- Memory : it allocate the more memory
+- Thread : Within the String methods are non-synchronized so there is no thread safe
+- Performance : slow 
+- Usage : if data is not changing frequently we can go with the String
+## StringBuffer
+- Storage : StringBuffer stores in Heap area
+- Objects : StringBuffer are mutable
+- Memory : consume less memory
+- Thread : StringBuffer has synchronized methods so it is Thread Safe
+- Performance : compared to String it is fast
+- Usage : if data is changing frequently
+## StringBuilder
+- Storage : it stores in heap
+- Objects : object are mutable
+- Thread : methods are non-synchronized so threads are not safe
+- Performance : fast as compared to StringBuffer
+- Usage : if data is changing frequently
+- 
