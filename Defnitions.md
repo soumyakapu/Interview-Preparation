@@ -528,4 +528,34 @@ public class Clon implements  Cloneable {
 - Serialization is converting an object into byte stream
 - if any class implements Serializable interface  it has two state of an object of that class they are serialize it converts an object into byte stream,deserialization converts byte stream to object
 - 
+### 50  Spring JPA
+- When ever we call the Jpa repository it internally calls the JPA Apis which is a interface doesn't have any implementation Jpa apis internally calls the Hibernate core apis ,which call the Jdbc
+- we can also create the customized methods in jpa
+### 53 Spring vs Spring Boot
+### Spring :
+```md
+Spring is an open-source lightweight framework widelyused to develop enterprise applications
+- Important feature of spring is dependency injection
+- it helps to create a loosely coupled application
+- to run the application we need to set server explicitly
+- to run the spring application a deployment descriptor is required
+- there is lot of boiler plate code is needed
+- it doesn't provide support for the inmemory database
+- we have to define depencies manually in pom.xml file
+```
+### Spring Boot
+```md
+- Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs.
+-  important feature of the Spring Boot is Autoconfiguration.
+- It helps to create a stand-alone application.
+- Spring Boot provides embedded servers such as Tomcat and Jetty etc.
+- There is no requirement for a deployment descriptor.
+- It reduces the lines of code.
+- It provides support for the in-memory database such as H2.
+- In Spring Boot, there is reduction in boilerplate code.
+- pom.xml file internally handles the required dependencies.
+```
+
+
+
 
