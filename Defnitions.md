@@ -477,4 +477,10 @@ ApplicationContext context =
 - Dependency Injection can achieved by Setter Injection and Construct Injection
 
 ### Constructor Injection and Setter Injection
-- 
+
+### 49. Spring mvc flow
+- Spring Mvc(Model-View-Controller)
+- When ever request goes from client to server, it will go web.xml then to front controller dispatch servlet behaves like front controller and front controller responsible to map with consoned controller and then request mapped to relevant controller and to service and repository
+- once it gets data from database , and it will return back to service and controller 
+- then jasper will map to the relevant model by using view resolver
+- and it will return to client
