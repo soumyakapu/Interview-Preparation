@@ -463,24 +463,4 @@ public class CustomizedAnnotaion {
 - Transaction rollback is the process of undoing the changes made by a transaction in DBMS .if transaction fails due to error or some other reasons  the DBMS discard the changes and it returns to its original state it can be done by manually by user or automatically trigged by the dbms whenever transaction fails due to deadlock or other some reasons.
 - Transaction rollback ensure the reliability and consistency of database 
 ```
-### Spring Ioc Container
-- Ioc : Inversion of control
-- Ioc is responsible for instantinating the application class , configure the object , and to assemble the dependency between two objects by using the xml configuration or java annotation
-- There are 2 types of Ioc : Bean Factory , ApplicationContext
-- ApplicationContext is interface above the bean factory application context provides some additional features like webApplication(Context) 
-```md
-ApplicationContext context =   
-    new ClassPathXmlApplicationContext("applicationContext.xml");  
-```
-### Dependency Injection
-- Dependency Injection is a design pattern which removes the dependency from the program by providing the external sources like Xml file it makes loosely coupled and easy for testing
-- Dependency Injection can achieved by Setter Injection and Construct Injection
 
-### Constructor Injection and Setter Injection
-
-### 49. Spring mvc flow
-- Spring Mvc(Model-View-Controller)
-- When ever request goes from client to server, it will go web.xml then to front controller dispatch servlet behaves like front controller and front controller responsible to map with consoned controller and then request mapped to relevant controller and to service and repository
-- once it gets data from database , and it will return back to service and controller 
-- then jasper will map to the relevant model by using view resolver
-- and it will return to client
