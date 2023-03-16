@@ -492,4 +492,40 @@ public class CustomizedAnnotaion {
 - Thread : methods are non-synchronized so threads are not safe
 - Performance : fast as compared to StringBuffer
 - Usage : if data is changing frequently
+### Marker Interface
+- A marker interface is an empty interface which does not contain any methods fields and constants
+- Marker Interface is also called tag interface
+- it delivers the run-time type information about an object 
+- it is the reason that the jvm and compiler have the additional information about an object, in short it is signal or command to the jvm
+- Marker interfaces are 3 types and we can also create marker interface
+- cloneable,serializable,cloneable and remote interface
+## Cloneable Interface
+- Cloneable belongs to lang package . It generate replica of an object with the different name
+- In cloneable we have clone() method
+- if we don't implement the cloneable interface and we call the clone() method it will give the classnotsupportedexception
+```java
+package solutions;
+
+public class Clon implements  Cloneable {
+    private int id;
+    private String name;
+
+    public Clon(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public  void show(){
+        System.out.println(id + name);
+    }
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Clon clon= new Clon(1," :"+ "Sonu");
+        Clon clon1=(Clon) clon.clone();
+        clon1.show();
+    }
+}
+```
+### Serialization
+- Serialization is converting an object into byte stream
+- if any class implements Serializable interface  it has two state of an object of that class they are serialize it converts an object into byte stream,deserialization converts byte stream to object
 - 
+
