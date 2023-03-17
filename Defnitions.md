@@ -559,7 +559,10 @@ Spring is an open-source lightweight framework widelyused to develop enterprise 
 - Guava is open source, java based library developed by google
 - it facilates best practise of code and reduce to coding errors
 - it provides the  utility for methods in collection,caching,i/o,validations,common annotation and primitive support
-
+### @JSONIgnore
+- this annotation ignores the logical property of serialization and deserialization
+- it is used for getters,setters and fields
+- if we use this annotation at fields or its getters, the field is not serialized  
 
 
 
