@@ -555,6 +555,10 @@ Spring is an open-source lightweight framework widelyused to develop enterprise 
 - In Spring Boot, there is reduction in boilerplate code.
 - pom.xml file internally handles the required dependencies.
 ```
+### Use of google.guava in an application
+- Guava is open source, java based library developed by google
+- it facilates best practise of code and reduce to coding errors
+- it provides the  utility for methods in collection,caching,i/o,validations,common annotation and primitive support
 
 
 
