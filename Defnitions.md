@@ -463,4 +463,99 @@ public class CustomizedAnnotaion {
 - Transaction rollback is the process of undoing the changes made by a transaction in DBMS .if transaction fails due to error or some other reasons  the DBMS discard the changes and it returns to its original state it can be done by manually by user or automatically trigged by the dbms whenever transaction fails due to deadlock or other some reasons.
 - Transaction rollback ensure the reliability and consistency of database 
 ```
+### Spring Actuator
+```md
+- Spring Actuator is a powerful tool for monitoring  and managing the health of  springboot application
+- BY default it provide url some of them are /actuator/health ,/actuator/info,/actuator/loggers
+- we craete custom endpoints by @EndPoint by providing id has endpoint name
+  it should map to a method by using @ReadOperation annotation, it can also take Request params.
+  We can also change the default /actuator endpoint from the properties file by using management.endpoints.web.base-path="custom"
+```
+### Difference b/w Spring, String buffer ,StringBuilder
+## String
+- Storage : Strings stores in Heap area within the string constant pool
+-  Objects: Strings objects are immutable(i.e that are not changeable)
+- Memory : it allocate the more memory
+- Thread : Within the String methods are non-synchronized so there is no thread safe
+- Performance : slow 
+- Usage : if data is not changing frequently we can go with the String
+## StringBuffer
+- Storage : StringBuffer stores in Heap area
+- Objects : StringBuffer are mutable
+- Memory : consume less memory
+- Thread : StringBuffer has synchronized methods so it is Thread Safe
+- Performance : compared to String it is fast
+- Usage : if data is changing frequently
+## StringBuilder
+- Storage : it stores in heap
+- Objects : object are mutable
+- Thread : methods are non-synchronized so threads are not safe
+- Performance : fast as compared to StringBuffer
+- Usage : if data is changing frequently
+### Marker Interface
+- A marker interface is an empty interface which does not contain any methods fields and constants
+- Marker Interface is also called tag interface
+- it delivers the run-time type information about an object 
+- it is the reason that the jvm and compiler have the additional information about an object, in short it is signal or command to the jvm
+- Marker interfaces are 3 types and we can also create marker interface
+- cloneable,serializable,cloneable and remote interface
+## Cloneable Interface
+- Cloneable belongs to lang package . It generate replica of an object with the different name
+- In cloneable we have clone() method
+- if we don't implement the cloneable interface and we call the clone() method it will give the classnotsupportedexception
+```java
+package solutions;
+
+public class Clon implements  Cloneable {
+    private int id;
+    private String name;
+
+    public Clon(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    public  void show(){
+        System.out.println(id + name);
+    }
+    public static void main(String[] args) throws CloneNotSupportedException {
+        Clon clon= new Clon(1," :"+ "Sonu");
+        Clon clon1=(Clon) clon.clone();
+        clon1.show();
+    }
+}
+```
+### Serialization
+- Serialization is converting an object into byte stream
+- if any class implements Serializable interface  it has two state of an object of that class they are serialize it converts an object into byte stream,deserialization converts byte stream to object
+- 
+### 50  Spring JPA
+- When ever we call the Jpa repository it internally calls the JPA Apis which is a interface doesn't have any implementation Jpa apis internally calls the Hibernate core apis ,which call the Jdbc
+- we can also create the customized methods in jpa
+### 53 Spring vs Spring Boot
+### Spring :
+```md
+Spring is an open-source lightweight framework widelyused to develop enterprise applications
+- Important feature of spring is dependency injection
+- it helps to create a loosely coupled application
+- to run the application we need to set server explicitly
+- to run the spring application a deployment descriptor is required
+- there is lot of boiler plate code is needed
+- it doesn't provide support for the inmemory database
+- we have to define depencies manually in pom.xml file
+```
+### Spring Boot
+```md
+- Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs.
+-  important feature of the Spring Boot is Autoconfiguration.
+- It helps to create a stand-alone application.
+- Spring Boot provides embedded servers such as Tomcat and Jetty etc.
+- There is no requirement for a deployment descriptor.
+- It reduces the lines of code.
+- It provides support for the in-memory database such as H2.
+- In Spring Boot, there is reduction in boilerplate code.
+- pom.xml file internally handles the required dependencies.
+```
+
+
+
 
