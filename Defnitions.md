@@ -471,7 +471,7 @@ public class CustomizedAnnotaion {
   it should map to a method by using @ReadOperation annotation, it can also take Request params.
   We can also change the default /actuator endpoint from the properties file by using management.endpoints.web.base-path="custom"
 ```
-### Difference b/w Spring, String buffer ,StringBuilder
+### Difference b/w String, String buffer ,StringBuilder
 ## String
 - Storage : Strings stores in Heap area within the string constant pool
 -  Objects: Strings objects are immutable(i.e that are not changeable)
@@ -563,6 +563,72 @@ Spring is an open-source lightweight framework widelyused to develop enterprise 
 - this annotation ignores the logical property of serialization and deserialization
 - it is used for getters,setters and fields
 - if we use this annotation at fields or its getters, the field is not serialized  
+### 16. Why java 8 is more popular than java 9 and other versions?
+### 16. Why java 8 is more popular than java 9 and other versions?
+### 16. Why java 8 is more popular than java 9 and other versions?
+### 16. Why java 8 is more popular than java 9 and other versions?
+
+### 16. Why java 8 is more popular than java 9 and other versions?
+- java 8 version is introduced in march 2014, it is a major updates like streams,static and default methods ,functional interface,lamda and java8 is a LTS(long term support) version
+- java 9 is introduced in sep 2017, it has a minor updates like raective streams, modules,jshell and it introduced some internal code error and it is not LTS
+### 55. == and .equals()
+- == and .equals both are used to compare the two objects in java but == is a operator .equals() is a method
+- == refers to checks the refernce of an object in the heap memory where as .equals() checks the value
+- .equals() method will check for strings
+```java
+package solutions;
+
+public class Q55 {
+    public static void main(String[] args) {
+        String ab="num1";
+        String cd="num1";
+        String ef=new String("num1");
+        System.out.println(ab==cd);
+        System.out.println(cd==ef);
+        System.out.println(cd.equals(ef)+" checking for values using the .equals() method");
+        //................................................................................................//
+        int a=10,b=10;
+        System.out.println(a==b);
+
+    }
+}
+
+```
+### 56. Object class
+- Object class is present in java.lang package
+- it is parent class of every class in java
+- Every class in java extends Object class directly or indirectly , when a class extends another class then it indirectly extending the object class,if class is not extending any class then it directly extending  the object class
+- Object class has some methods they are : hashCode(),getClass(),equals(),clone(),toString(),finalize(),wait(),notify(),notifyAll()
+### 57. Second max highest salary in employee table
+### 58. Why ArrayList is fast
+- for fetching arraylist is fast than linkedlist
+- linkedlist follows the node which has next and preivous element when we are trying the get the particular element it need to check with next element but with arraylist it will go to the particular index and get the value
+```java
+package solutions;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+
+public class ArrayListFast {
+    public static void main(String[] args) {
+        LinkedList<String >linkedList=new LinkedList<>();
+        linkedList.add("Helloo");
+        linkedList.add("Welcome");
+        linkedList.add("Bye");
+        ArrayList<String > arrayList= new ArrayList<>();
+        arrayList.add("Helloo");
+        arrayList.add("Welcome");
+        arrayList.add("Bye");
+
+        System.out.println("from LinkedList "+linkedList.get(1));
+        System.out.println("from ArrayList "+arrayList.get(1));
 
 
+    }
+}
 
+```
+### 60. Compare vs compareTo
+- 
+### comparator vs comparable
+- comparable is an interface
