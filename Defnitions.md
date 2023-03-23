@@ -563,10 +563,7 @@ Spring is an open-source lightweight framework widelyused to develop enterprise 
 - this annotation ignores the logical property of serialization and deserialization
 - it is used for getters,setters and fields
 - if we use this annotation at fields or its getters, the field is not serialized  
-### 16. Why java 8 is more popular than java 9 and other versions?
-### 16. Why java 8 is more popular than java 9 and other versions?
-### 16. Why java 8 is more popular than java 9 and other versions?
-### 16. Why java 8 is more popular than java 9 and other versions?
+
 
 ### 16. Why java 8 is more popular than java 9 and other versions?
 - java 8 version is introduced in march 2014, it is a major updates like streams,static and default methods ,functional interface,lamda and java8 is a LTS(long term support) version
@@ -632,3 +629,106 @@ public class ArrayListFast {
 - 
 ### comparator vs comparable
 - comparable is an interface
+### 84. What is Optional
+- Optional class is introduced in java8 to deal with the null pointer exception and it is present in util packageS
+```java
+package solutions;
+
+import java.util.Optional;
+
+public class OptionalExample {
+    public static void main(String[] args) {
+//        String opts[]=new String[3]; it will give the null pointer exception
+//        System.out.println(opts[2].toString());
+            String op[]=new String[5];
+        Optional<String  > optionalS=Optional.ofNullable(op[2]);
+       if (optionalS.isPresent()){
+           System.out.println(optionalS +" it is  present in the array");
+       }
+       else {
+           System.out.println(optionalS +" it is not present in the array");
+       }
+
+    }
+}
+
+```
+### 119. Java program to find Second-Highest Element in an array
+
+### 127. remove the duplicate element from the list
+```java
+package solutions;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class RemoveDuplicate {
+    public static void main(String[] args) {
+       List<Integer> list= new ArrayList<>();
+       list.add(12);
+       list.add(13);
+       list.add(12);
+       list.add(13);
+       // using the Streams
+
+       List<Integer> removedDuplicates=list.stream().distinct().collect(Collectors.toList());
+       System.out.println("Using the Streams : "+removedDuplicates);
+
+        // without using the Stream
+
+        Set<Integer> sets=new HashSet<>();
+        for (Integer set:list)
+            if (!sets.contains(list))
+                sets.add(set);
+                System.out.println("Without the Streams : "+sets);
+    }
+}
+
+```
+### 128. sort the given list in ascending and descending order
+```java
+package solutions;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+public class SortingListToAD {
+    public static void main(String[] args) {
+        List<String> list= Arrays.asList("Sonu","Patel","Radha");
+        List<Integer> ints=Arrays.asList(1,5,3,7);
+        // for asscending order
+        ints.stream().sorted()
+                .forEach(System.out::println);
+        // for decending order
+      Set<Integer> set= ints.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toSet());
+      
+        System.out.println(set);
+        list.stream().sorted().forEach(System.out::println);
+    }
+}
+
+```
+### 129. get the sum of all numbers present in a list using streams
+```java
+package solutions;
+
+import java.util.LinkedList;
+import java.util.List;
+
+public class SumOfNumbers {
+    public static void main(String[] args) {
+        List<Integer> sum=new LinkedList<>();
+        sum.add(2);sum.add(5);sum.add(8);
+        System.out.println(sum.stream().reduce(0, Integer::sum));
+
+    }
+}
+
+```
