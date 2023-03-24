@@ -730,5 +730,27 @@ public class SumOfNumbers {
 
     }
 }
-a
+```
+### Recrusion 
+- When we call a method in the same method its called recrusion 
+- in the below example we are doing the recrusion 
+```java
+package solutions;
+
+public class RecrusionExample {
+    public static void main(String[] args) {
+        display(5);
+    }
+
+    private static void display(int n) {
+        System.out.println("Hellooo Babyyyy");
+        if(n<3)
+            return;
+//        for (int i = 0; i < n; i++) { // instead of recrusion we can also do looping
+//            System.out.println("I hate uuuuuu");
+//        }
+        display(n-1);
+    }
+}
+
 ```
