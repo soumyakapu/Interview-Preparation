@@ -754,3 +754,29 @@ public class RecrusionExample {
 }
 
 ```
+### 4. Solid Principles
+- Solid Principles introduced by Robert C.Martin also know 
+
+### Difference b/w hashtable and hashmap
+```md
+ HashTable : 
+1. HashTable stores the data in key value pair
+2.HashTable is synchronized so thread is safe
+3.HashTable doesnot allow the null values and keys 
+4.It is legacy class
+5.intial capacity is 10 and loadfactor is 0.75
+6.it is slow when compared to hashmap
+```
+```md
+HashMap :
+1. HashMap stores the data in key value pair
+2.hashmap is not synchronized so the thread is not safe
+3.it allows only one null key and multiple null values
+4. it introduced from jdk 1.2
+5. we can synchronize using the Collection.synchronizedMap(hashmap)
+6.it is fast when compared to hashtable
+7. iterator in hashmap is fail fast
+```
+### 6. Fail fast, fail safe iterators
+- Iterator is a interface in collection it has two types of iterators fail fast and fail safe
+- Fail fast : when a collection is iterating using iterator method any structural modification is happend by the other thread then 
