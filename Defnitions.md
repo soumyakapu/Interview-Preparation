@@ -780,3 +780,7 @@ HashMap :
 ### 6. Fail fast, fail safe iterators
 - Iterator is a interface in collection it has two types of iterators fail fast and fail safe
 - Fail fast : when a collection is iterating using iterator method any structural modification is happend by the other thread then 
+
+### DeadLock
+- When one thread is waiting for an object lock that is acquiring by the other thread and second thread is waiting for the object lock which is acquring by the first thread then each threads are waiting on each thread to release then it is called deadlock
+- To overcome from deadlock by using the synchronized block,and by using the joins,avoiding the unneccessary thread lock,and by avoiding nested locks
