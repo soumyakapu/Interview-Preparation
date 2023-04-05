@@ -330,3 +330,18 @@ Exception : 	It is mainly caused by the application itself.
 - Chained Exception helps to identify a situation in which one exception causes another Exception in an application.
 ### 22. what is advice,point cut,joint point?
 ### 23. what is Collections and Collection?
+### 24.What is the difference between @Contoller and @RestController?
+- @Controller : it is used make a class to handle Http the request and returns as a view
+- it is specialized version of @component
+- it is added in the spring 2.5
+- we need to use @ResponseBody to every handler
+- @RestController : it is used to make the class to handle http request  and return as a json or xml
+- it is specialized version of @Controller
+- it is added in spring 4.0 version
+- no need to specify the @ResponseBody explicitly
+  
+ 
+### 25.What is the difference between a GET request and a POST request?
+-  Both GET and Post requests are http requests
+- Get is used to reterive data from the server while using the get the data is seen in the url so when we use this information may leek
+- Post is used to post data to the server in this data is  not seen in url
